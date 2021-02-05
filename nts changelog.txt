@@ -1,4 +1,4 @@
-﻿	v0.3.3 in coming —— 
+v0.3.3 in coming —— 
 
 
 v0.3.2
@@ -841,5 +841,4 @@ Thanks to
 		- Watching this document. 
 		- Enjoy the Farce! 
 
-asdqwdqwdqwdqwdqw
-git pull test "lazy fuck"
+
