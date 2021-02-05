@@ -1,0 +1,844 @@
+v0.3.3 in coming —— 
+
+
+v0.3.2
+
+Add ShinningFingernail. 
+
+Add Guard back. 
+	- Remade whole charater. 
+
+
+Changed the trigger time of the mutations which be triggered when taking damage. 
+	- BlastChest
+	- Neoplasia
+	- ParalyticNerve
+		- Now they happens in the same frame. 
+
+Changed the unlocking condition of Coward. 
+Changed the colors of Phantom and SniperWand. 
+	- Ace told Wspr that we used lime green as the border color of CursedLithiasis made it seems gross. 
+		- Well actually it was lemon yellow but we really should not use this color. 
+			- So we changed all colors of sprites about Phantom to Crystals or Curses colors. 
+
+Changed ComminutedPhalanx. 
+Changed CursedLithiasis. 
+	- Give a new mutation choice to replace CursedLithiasis after getting LastWish. 
+	- Replace it with a special mutation after 4-?. 
+	- Sprites
+Changed GeometricalElbow again. 
+Changed ParalyticNerve. 
+
+Changed a few. 
+	- Some areas' point place on the map. 
+	- RadiumWings never color WepPickup anymore. 
+	- A few for compatible with NT3D. 
+		- Skirmish
+		- Dungeon
+		- City
+		- Envoy
+
+
+Fix some texts. 
+	- ArtificialLimb
+	- BlastChest
+	- Neoplasia
+	- PoisonedLungs
+	- RadiumWings
+	- ComminutedPhalanx
+	- Crowns
+		- Thanks to Ace. 
+
+Might(?) fixed some bugs. 
+	- Summon an Ally out the walls when you take RhinoSkin and you already taken Neoplasia. 
+
+
+
+v0.3.1
+
+Updated Bloodstains effects. 
+	- The dynamic bloodstains can stay on screen now. 
+	- Some stuff can create more bloodstains. 
+		- MeatExplosion
+		- Corpse on Tangle
+		
+	- Some stuff can clear the solidified bloodstains. 
+		- Fish can roll
+		- Monster Style
+		- RainSplash
+
+- Updated Weapon Examine parts to stand-alone files. 
+	- Modders can define nts_weapon_examine() in race.gml and wep.gml to create their own examine texts now. 
+
+
+Add RandomLevelEvents back as Skirmish System. 
+	- Neodevon
+	- PumpkinMaxParty
+	- Pumpkinller
+	- Rain
+	- Permafrost
+	- FrogRadChest
+	- Conflagration
+
+Add Boss for Dungeon and new area. 
+Add Venusian Mansion. 
+
+Add The Even Evener Longerer Longiest Longestedded Killfeed back. 
+Add Bouncerka. 
+
+Add Pictographic skin for Fish. 
+Add GunGod skin for YungVenuz. 
+
+
+Changed CursedLithiasis. 
+	- Not only after Loop give you a new choice to replace CursedLithiasis now. 
+		- ???(Vault)
+		- 4-?
+
+Changed Outlab. 
+	- Only 1 level again. 
+
+
+Rewrite Crystal Weapons. 
+	- CrystalRapier fires stable lasers now. 
+	- CrystalGiantSword changed name to CrystalClaymore, summons columns and takes less effect from LongArms for the slash now. 
+	- Add CrystalTank. 
+	- Removed CrystalBuckler for now. 
+Rewrite Gamma Weapons. 
+
+
+Replace some old sprites with community creation. 
+	- The sprites of CharSelect buttons of Coward, AwkwardMan and Bronya. 
+		- Thanks to Jsburg. 
+
+
+Make a few minor changes. 
+	- Loading sequence of files. 
+	- Now you can set which loop will the Ride System be disabled. 
+	- When you pick a Bandit now will never change its sprites and sounds. 
+	- Better light effect and less lag in Ruins. 
+	- Ruins might be dark or not. 
+	- Changed the number of ColorlessAmmos in ColorlessCrystalChest from 6 to 5. 
+	- BloodStrike from FleshArm will never be destroyed when meeting walls now. 
+	- Flashlight have Energy entry for Robo Merge now. 
+	- Auto Rifle from Robo Merge will use another sprite which in the same of merged SMG or Minigun. 
+
+Parad and Grove are not accessible after loop now. 
+
+
+Removed anything about Market. 
+
+Removed BloodBuckler. 
+Removed LilHorror. 
+Removed RavenLaserCannon. 
+
+Removed 3 charaters which out of the stroy. They are all stand-alone mods now. 
+
+
+Fixed some bugs. 
+	- Custom Objects invisible in Coop Game sometimes. 
+	- Enemies have wrong team value when they are carrying RadChest. 
+	- Infinity GoldenBarrel
+	- LilHorror cause some bugs. 
+	- FledglingGun is unusable in NTT9940. 
+	- Wrong value of Toxic weapons' typ variables. 
+	- Some bugs happen when loaded other mods. 
+		- ChaosHearts(NT:TE) break game after Ruins or Market. 
+
+
+
+v0.3.0
+
+Update Save System. 
+	- So the old save data will be discarded. 
+
+Rewrite nts.mod.gml to some independent sector. 
+	- Updated Tips System. 
+		- Default disable. 
+	- Updated Ride System. 
+		- More common enemy driver type. 
+			- BuffGator
+			- Gator
+			- Sniper
+			- Bandit
+		- More common enemy mount type. 
+			- FireTrap
+			- Car
+			- GoldenSnowTank
+			- SnowTank
+			- Ratking
+			- GoldenScorpion
+			- Scorpion
+			- Salamander
+			- BigMaggot
+			- InvSpider
+			- Spider
+		- Special RiderGroup
+		- Enemies will transport Chests. 
+		- Enemies will transfer their mount or vehicle. 
+		- Enemies will rob other's mount or vehicle. 
+		- Removed Player driving because some bugs. 
+		- Fixed GhostDriver bug. 
+	- Custom Crown Select Screen when game start. 
+	- Less lag. 
+	- Player can take all type of Cactus as Weapons now. 
+	- Player can not break FireTrap now. 
+	- No Resource now, Corpses gives money. 
+	- Removed Debuff System because some bugs in Coop Game. 
+	- Removed RandomLevelEvents because some bugs. 
+	- Removed Robo and Steroids in Market. 
+
+Rewrite ntsECont.mod.gml. 
+	- Less lag. 
+	- Wimic will slurp now. 
+
+
+Add 60fps mode back again. 
+	- * A G A I N *
+
+Add Effect for Bloodstains. 
+	- Default disable. 
+Add Effect for smoking Coward. 
+
+
+Add KatanaZero back. 
+	- This charater was deleted before 0.1.0 was released. It's the third Custom Character in NTS so it's commemorative for NTS. 
+	- We decided to add him back because we could realize all design of this Character now. 
+		- And we were cognizant of that most of creation of Gali were unused or removed, so we did need to do this. 
+Add vGundam. 
+
+
+Add Crown of Master. 
+Add Ring of Braid. 
+Add Crown of Evolution. 
+
+
+Add AutoBulletShotgun. 
+Add FledglingGun. 
+Add NukeBazooka. 
+Add PizzaCutter. 
+Add GoldenPizzaCutter. 
+
+
+Weaken UltraA of Coward. 
+Weaken ThroneButt of Bronya. 
+	- Now ThroneButt will heighten the Special CD. 
+
+Weaken VenuzKnife and GoldenVenuzKnife. 
+	- Now the Shank of them will never destroy projectiles. 
+
+
+Make a few minor changes. 
+	- Most of them for 3d sounds or compatible with 60fps. 
+		- Actually, Rewrite all of Characters and Enemies from NTS. 
+			- i'd glad to say that i always want to rewrite them and it's a good chance to do this because old codes were so immature and broken that i have to make it true. 
+	- Others, for compatible with NT:TE. 
+		- Robo Merge System with the Merge Weapons from NT:TE. 
+
+Changed wide screen from 427px to 428px. 
+	- Because there is a blank line always on Menu in NativePixelMode. But it won't show at underside in 428px FullScreenMode. 
+		- i think it looks better when rightside than underside. 
+
+Changed Cactus. 
+Changed Flashlight. 
+	- Not automatic for Steroids anymore. 
+Changed sprite of BulletShotgun. 
+
+Changed sprite of BlastChest. 
+	- Because almost all testers said the old sprite looks like a butt with two back pockets. :(
+		- We need a voluntary pixel artist, seriously. 
+Changed GeometricalElbow. 
+
+Changed Ruins. 
+	- No darkness after loop. 
+	- Spawn different enemies and play different music after loop. 
+
+
+Remade RadiationJaw. 
+	- Rads slower reload time. 
+	- Rads be attract more easily. 
+	- Synergy with Plutonium Hunger. 
+		- Attract rads. 
+
+
+Removed tons of things because some bugs. 
+	- PopoClowns
+	- Guard
+	- ShovelKnight
+	- AncientMuscle
+	- BicepsReflex
+	- CrystalWeapons
+
+Removed Gaze because the characteristics of Cur and it are repeated. 
+
+Removed Necrogun. 
+
+
+Fixed some bugs. 
+	- GhostDriver. 
+	- Wrong charge speed of Flashlight in 60fps mode. 
+	- The Bolts from Robo Merge Crossbow won't disappear. 
+	- Flame of Fruits kills Players even with BoilingVeins. 
+	- Tricker could not fire by their third hand sometimes. 
+	- Text color of some Mutantions. 
+		- CursedLithiasis
+
+
+
+v0.2.0
+
+Add altcharselect.mod. 
+ - Thanks to Wildebee, made altcharselect.mod and permit for using it in NTS. 
+
+
+Bolts never disappear now. Players can pick them up. 
+FlareNade exists longer. 
+
+
+Add screen shake for weapons. 
+Add Steroids back because we fixed the bugs. 
+
+
+Add Coward. 
+Add Cur. 
+
+
+Add Unlock condition for Skins. 
+
+
+Add Ruins. After 2-?, 1 levels and going into 3-3. 
+ - Darkness with shine. 
+ - Manager and Waiter. 
+
+
+Add sounds for NTS mutations. 
+Add level tips for NTS mutations. 
+
+
+Add BlueRose. 
+Add RedQueen. 
+
+Add Weapons be modified from REAwep mod. 
+ - HandGrenade. (Grenade)
+ - HandFlareGrenade. (FlameGrenade)
+
+
+Changed System of Robo Merge. 
+
+
+Changed MarketNPCs' UI. 
+
+
+Changed PoisonedLungs. Now the toxic gas will make current damage to enemies. 
+Changed the Effect of RadiationJaw. 
+
+
+Changed Turtle. 
+ - Can be stacked now. 
+ - Takes more damage. 
+ - Can bounce between enemies. 
+ - Easier to pickup a rolling Turtle. 
+Changed IDPDBaton. EnergySlash only now. 
+
+
+Remade RadiumWings. 
+ - Pickups exist longer. 
+ - Gets more rads. 
+Remade GeometricalElbow. 
+
+
+Removed BloodBass. 
+Removed Molefish. 
+
+
+Fixed some bugs. 
+ - ToxicHammer ErrorReport. 
+ - HyperKatana Stuck. (so we add it back again
+ - Start in Parad after Player dead or restarted in 1-?. 
+ - Also for Glove and 5-?. 
+ - Wrong mask of Doors in Dungeon. 
+ - Digger couldn't bury CustomEnemy or CustomProjectile. 
+ - Couldn't unlock ShovelKnight. 
+ - Some Characters was useable locked. 
+
+Find a weird bug. BGM usually gones in NTT9940 but never happened in NTT9944. 
+
+
+
+v0.1.7
+
+Add BlastChest. 
+ - Explode when Player taken damage. 
+Add PoisonedLungs. 
+ - Fluid toxic gas. 
+ - No damage from toxic gas. 
+Add ParalyticNerve. 
+ - Take less damage after you taken damage last time. 
+ - If you get 0 damage from one hit, reset the number. 
+Add ComminutedPhalanx. 
+ - Double Bullets. 
+ - Bullets makes less damage. 
+Add Neoplasia. 
+ - Summon allies after you regenerated hp. 
+Add NerualNetwork. 
+ - Only in the Coop games. 
+ - The live Player will tow dead teammates. 
+ - Give revived Player their own weapons. 
+Add ArtificialLimb. 
+ - Higher rate of fire but not on the melee weapons. 
+Add AncientMuscle. 
+ - Higher ammo max as crown vaults visits gets more. 
+Add BicepsReflex. 
+ - Fire and reload when taken damage. 
+Add MentalBox. 
+ - Enemy Projectiles follow broken line path. 
+
+
+Add ToxicHammer. 
+Add ToxicCrossbow. 
+Add ToxicThrower. 
+Add HyperToxicLauncher. 
+Add ToxicBazooka. 
+Add GatlingToxicBazooka. 
+Add SuperToxicBazooka. 
+Add ToxicNukeLauncher. 
+
+
+Changed the UltraA of Bronya. 
+
+
+Changed Dungeon. 1 level and going into 2-1. 
+
+
+Remade ExtraFeet.
+ - Rush at the beginning of move. 
+
+
+Removed BackMuscle. 
+Removed OpenMind. 
+Removed GeometricalElbow. 
+
+
+Removed ExploBow.
+
+
+
+
+
+v0.1.6
+
+Remade ShovelKnight. 
+
+
+Add Molefish. 
+Add Guard. 
+
+
+Add Camera. 
+Add StrikeGun. 
+Add Unstable Sword. 
+Add Unstable Trichord. 
+
+Add The Even Evener Longerer Longiest Longestedded Killfeed. 
+Add Flakzooka. 
+Add Laserwall.
+Add PPNShot. 
+Add Shotgod. 
+
+
+Changed the cost of the cannons made of Robo. 
+
+
+Changed ThroneCannon. 
+Changed RavenLaserCannon. 
+
+
+Changed RhinoBots. Now they won't explode. 
+
+
+Fixed the skillbar of Phantom in Coop Game. 
+
+
+Fixed the infinite ammo bug happens when Robo taking ThroneButt. 
+Fixed the sprites of the Merge guns from Robo. Now they looks like half+half more. 
+
+
+Trying to fix these bug. 
+	- Coop Game crushes sometimes when Phantom pressed Spec Button with UltraB. 
+
+
+
+v0.1.5 
+
+Add Robo. (Remade Robot)
+ - with thousands of different merged guns. :)
+
+
+Add GammaPistol. 
+Add GammaRifle. 
+Add GammaCannon. 
+
+
+Changed AI of Cars when being driven of a Assassin. 
+
+
+Change the text of Envoy. 
+
+
+Changed Grove. 1 level and going into OutLab. 
+
+
+Changed Tricker's Ultra Mutantions. 
+
+
+Change EagleEyes. Sees in the darkness now. 
+Change CursedLithiasis. 
+ - The CursedAmmoPickups never explode now. 
+ - You will choose a new mutation to replace CursedLithiasis when Loop. 
+Change the text of GeometricalElbow. 
+
+
+Changed Fruits. Now they have different dead sounds. 
+Changed UnderTanks. Now they will broke walls when wake up. 
+
+
+Fixed lots of bugs that happened when press Pick Button. 
+ - Some of the weapons will give wrong Player. Now they won't. 
+ - When you driving a car and try to pick up a weapon. You will stop driving the car. 
+	- Now if you driving over a weapon and press Pick Button, you will pick the weapon up and still driving the car. 
+
+
+Fixed the doors in Dungeon explode at spawn sides sometimes. Now they will not be create so close. 
+
+
+
+v0.1.4
+
+Now you will load NTS in progress mode. It means that your NT will never crashes when loading NTS in Coop mode.
+
+
+Add some texts for /viewwep. 
+ - (Seriously? Even anyone used it? )
+
+
+Add Tricker. (Testing)
+ - Can take one more weapon. 
+ - The stored weapons will be unloaded if you have not ThroneButt. 
+ - Can take two more weapons if you have UltraA. 
+ - The stored weapons will reload in 12.5% speed if you have UltraB. 
+
+
+Add Grove. After 5-?, 3 levels and going into 6-1. 
+ - Lots of Popos and BlueFruits. 
+ - Lots of PopoChests. 
+
+
+Add GeometricalElbow. 
+ - Reload non-automatic weapons when you shaking your weapon about 90 degrees. 
+Add RadiationJaw.
+ - You have a 1% chance to regenerate hp by rads. 
+Add RadiumWings.
+ - The Rads never disappear. 
+ - Attract Rads from nearer.
+ - Attract rads from everywhere if you have PlutoniumHunger. 
+Add CursedLithiasis.
+ - All Weapons turned into cursed.
+ - All BigWeaponChests turned into BigCursedChests. 
+ - All AmmoPickups turned into CursedAmmoPickups. They will never disappear but still explode, and they will climb to the nearest Player. 
+
+
+Fixed Envoy stuck on the doors in Dungeon. 
+Fixed PopoClowns's Spec Marks always follows P1's Mouse. 
+
+
+Remade EagleEyes.
+ - Watch further. 
+
+
+Remaking Pumpking because not so fun.
+
+
+Changed Enemies in Outlab. 
+ - Asnowsins never be invisible after Loop. 
+ - RhinoBots never jump after Loop. 
+ - Add some Fruits. 
+ - Changed UnderTanks. 
+
+
+Changed BrokenRoyalSword. If you take BlackSword and BrokenRoyalSword to the ??? after L0, it will turned into RoyalSword. 
+
+
+For some unknown reasons, there are some weird bugs. 
+ - 2P Coop Game always crushes when Bronya in. 
+ - Coop Game crushes sometimes when Phantom pressed Spec Button with UltraB. 
+ - Super super rarely (only happened 2 times in 2P Coop Game), one Player's team changes. That means the Players will hurt each other. 
+
+
+
+v0.1.3
+
+Add Gaze. An devil means orgy. 
+ - Autoaim when you hold Spec Buttom if you have ThroneButt. 
+ - 200% reload speed and 0% deviation if you have UltraA. 
+ - 400% reload speed and 1200% deviation if you have UltraB. 
+Add Phantom. A wizard summons ColorlessCrystals by ectoplasm. 
+ - You will get some power when you kill a CursedLaserCrystal. 
+ - You will start with 5 DEALs. It means the enemies have 10% change to become a CursedLaserCrystals with original melee damage and health. 
+ - The ColorlessCrystals have 30 HP, or 50 HP if you have ThroneButt. 
+ - The ColorlessCrystals fires lasers every 5 frames to random direction, or fires lasers every 10 frames to your mouse if you have UltraA. 
+ - The ColorlessCrystals will explode with lasers and clear projectiles if you have UltraB. 
+Add AwkwardMan. 
+ - Just ask Wspr if you have any question. 
+
+
+Add Parad. After 1-? or dead in 1-? the restart, 3 levels and going into 3-3.
+ - Lots of Envoys and Gazes. 
+ - Lots of BigColorlessChests. It's a good choice to come here for the weapons. 
+ - If you choose this way, you can skip the first market to make sure there be a robot in the market at 7-2. 
+Add Outlab. After 5-3, 3 levels and going into 6-1. 
+ - Lofs of Asnowsins and RhinoBots. 
+ - There will be a boss in next vision. 
+
+
+Add lots of new enemies but we forget how they work so never mind. Just have fun. 
+
+
+
+v0.1.2
+
+Enemies do not ride Scorpions, GoldenScorpions, Salamanders, SnowTanks and GoldenSnowTanks now because some stupid bug.
+
+Now ices have different color in different area. 
+
+Changed PopoClowns.
+ - You won't start game in hard value = 20 now. But you will meet double enemies and they drop half rads. 
+ - Now you can use Number Key 4 to command PopoClowns concentrate fire to one point. 
+ - Now PopoClowns will fire to the enemy which closest Commander's mouse. Hopes it works for making the fps better. 
+ - For these reason, 4-? is really hard for PopoClowns now. But it's okay if you are good at commanding. 
+
+Add Dungeon. After 1-3, 2 levels and going into 2-1.
+ - Dark level.
+ - Lots of Venusians and ExploDoors.
+ - Lots of WeaponChest. 
+ - Come from GunGodz.
+
+Changed common MarketNPCs' price list. (Thanks to GuangMeng!)
+Changed YungVenuz NPC's price. 
+Changed Robot NPC's price list. 
+Changed Rogue NPC's "draw all money" to "draw 400 (and 40 fee)", can only service once per level.
+
+
+
+v0.1.1
+
+Changed Fabrics price from (1~5) to (2)
+
+Add PopoClowns. Weak one but powerful ones while they under a Commander's control.
+ - You will start game in hard value = 20. 
+ - Number Key 1, 2, and 3 to change Commander mode.
+ - When Follow mode, the PopoClowns will follow the Commander.
+ - When Goto mode, press Spec button to Mark. The PopoClowns move to Mark first, follow Commander then. 
+ - When Stand mode, every PopoClowns will stop moving. 
+ - PopoClowns won't attack Throne. Because they always broke Throne before you broke all Generator. 
+ - When Commander die or press Pick button+Swap button, you will switch the Commander. 
+ - If you have Throne Butt, The Commander mode turned to Follow mode. You could use your ability. 
+ - When level start or Commander touched the RogueChest, The PopoClown will be summoned.
+ - If your got UltraLevel, The PopoClown may be a Elite. 
+ - If you have UltraA, The PopoClowns' rate higher. 
+ - If you have UltraB, The PopoClowns will be all Elite. Your ability stronger. 
+
+Remaking ShovelKnight because not so fun.
+Remaking KatanaZero because not so fun.
+
+Remaking HyperKatana because a terrible bug makes it can not be used.
+
+
+
+v0.1.0
+
+There are so much stuff changed and we didn't take notes for them. 
+Sorry bro but you need to found them all by yourself now. 
+
+
+
+For some unknown reasons, there are some weird bugs. 
+ - Coop Game always crushes when game start with someone taking golden weapon. 
+ - Coop Game crushes sometimes when Phantom pressed Spec Button with UltraB. 
+ - Super super rarely (only happened 3 times), some of Players' teams changes. That means the Players will hurt each other. 
+ - The enemies don't execute right events when them die in 4P Coop Game or the Game has runs for so long. 
+
+
+
+
+
+
+
+
+
+
+Main Developers
+	
+	光梦
+	GuangMeng
+		- Designer and Concept Artist
+			- Phantom
+			- Ruins
+			- Manager and Waiter
+			- ComminutedPhalanx
+			- Crystal Weapons
+			- SniperWand and PizzaCutter
+			- AncientMuscle (removed)
+			- RedClaw and BlackSpike (unused)
+			- Binah from Lobotomy Corporation (in coming)
+			- Weapons from Cave Stroy (in coming)
+			- Laser/Ion Attack of TechnoMancer (in coming)
+		- Data Collector, found lots of interesting Ways of Playing
+			- StrikeGun clone Turtles
+				- Used to be a bug. 
+			- Possible Neoplasia Mutantions Build
+			- Possible BicepsReflex Mutantions Build of Skeleton (removed)
+	
+	氢锆【格里高利卡车】
+	HaZar the GregorTruck
+		- other things. it mainly includes main codes, sprites, designs, and the document which you watching now. 
+		- personal page on Itch: https://hazar-the-gregortruck.itch.io/
+		- E-mail address: HaZar_GregorTruck@foxmail.com
+	
+	Hurum
+		- Artist
+			- ShovelKnight
+			- Wimic and Asnowsin
+			- some of Weapons
+				- AutoSniperRifle
+				- BloodBass (removed)
+				- BloodBuckler (removed)
+				- BrokenRoyalSword
+				- Crystal Weapons and Projectiles
+				- Flashlight
+				- FleshArm
+				- VenuzKnife
+				- HyperKatana
+				- LightningLadder
+				- Necro Weapons (unused)
+				- Robo Merge Weapons
+				- RustyShovel
+				- SniperPistol
+		- Concept Designer
+			- BloodBass (removed)
+			- BloodSkull (unused)
+	
+	寒枫
+	Maple
+		- Designer
+			- Bronya section (stand-alone)
+			- Crown of Destimy
+			- FledglingGun
+		- Artist
+			- Bronya section (stand-alone)
+			- Crown of Destimy
+	
+	沐凉人
+	MuLiangRen
+		- Concept Designer
+			- vGundam RX-93
+			- Double Ultra (in coming)
+		- Present HaZar a keyboard and a mouse as gifts. 
+			- That helped a lot for typing. Finally I could get rid off my old membrane keyboard and middlebuttonless mouse. 
+	
+	瑞破
+	Reaper
+		- Propagandist
+		- Designer
+			- StitchingMonster
+		- Artist
+			- Hand(Flare)Grenade
+			- Gamma Weapons
+			- StrikeGun
+			- Sprites of Molefish 3D parts (removed)
+			- StitchingMonster
+	
+	Tease
+		- Forever Divinity of Inspiration
+			- Cacubus, Centipede, Denji the ChainsawMan, Togata (in coming)
+			- BlueRose and RedQueen, from Devil May Cry
+	
+	Wspr
+		- the Best Cover Image Designer among the Developers
+		- Propagandist and Technology Adviser
+		- Programmer and Artist
+			- AwkwardMan
+			- some of the weapons. 
+			- Crown of Master (modify)
+		- personal page on Itch: https://wspr.itch.io/
+	
+	彦杉
+	YanShan
+		- Concept Designer
+			- Digger
+			- Tricker
+			- Mishap (in coming)
+		- Artist
+			- Tricker
+			- Portraits, Icons, Buttons and SkinB of Digger
+			- Buttons and Icons of Envoy
+			- Portaits of Pumpking and Envoy. (unused)
+			- Fruit
+			- Bud (in coming)
+	
+	
+	
+Thanks to
+	
+	————
+		- Made sprite of RavenLaserCannon. 
+	
+	Ace
+		- Texts fixing. 
+	
+	Comic Sans
+		- Early Edition Tester
+	
+	夜陨迟彩
+	EveneteoryUunchiaya
+		- Early Edition Tester
+	
+	Fei鱼子
+	Feishiko
+		- Musician
+			- Summer Area, in Grove
+	
+	咖喱
+	Ga1igaygay
+		- Artist and Designer
+			- Cap (unused)
+			- Dead sprites of RhinoBot (unused)
+			- Molefish 3D Van (removed)
+			- KatanaZero and ZeroSword (stand-alone)
+			- Button of RadiationJaw, and AwkwardMan Ultras
+	
+	Jsburg
+		- Made some sprites of CharSelect buttons. 
+			- Coward
+			- AwkwardMan
+			- Bronya
+	
+	Nucone
+		- Tester
+	
+	緹歐
+	Tiew
+		- Musician
+			- Cheap Dream, in Ruins
+			- SHAKE IT, in Ruins
+			- SHOT, in Ruins
+	
+	Wildebee
+		- made altcharselect.mod and permit for using it in NTS. 
+			- https://wildebee.itch.io/altcharselect
+		- personal page on Itch: https://wildebee.itch.io/
+	
+	You
+		- Watching this document. 
+		- Enjoy the Farce! 
+
+
