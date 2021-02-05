@@ -1,0 +1,3 @@
+
+/loadrace awkwardman
+/loadmod crazy
