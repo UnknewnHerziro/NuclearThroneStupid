@@ -1,0 +1,2 @@
+/loadmod ntsLoad
+/load main2

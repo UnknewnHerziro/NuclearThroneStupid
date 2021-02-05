@@ -1,0 +1,3 @@
+/unloadmod ntsLoad.mod
+
+/nts-help
