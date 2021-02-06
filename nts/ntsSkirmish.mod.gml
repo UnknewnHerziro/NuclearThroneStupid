@@ -66,7 +66,13 @@
 
 #define _4
 	{
+	var r = random(1)
 	
+	if(r < 0.1)
+		{
+		ev_landslide()
+		return true
+		}
 	}
 
 #define _5
@@ -282,6 +288,8 @@
 	script_bind_step(step_conflagr, 0, self)
 	}
 
+#define ev_landslide	if noNT3D	script_bind_end_step(end_step_landslide, 0)
+
 
 
 #define step_neodevon
@@ -395,6 +403,32 @@
 		{
 		draw_sprite_ext(sprGroundFlameBig, image_index, x, y-12, 3, 3, 0, c_white, 1)
 		exit
+		}
+	instance_destroy()
+	}
+
+
+
+#define end_step_landslide
+	{
+	with(instances_matching(LaserCrystal, "sprite_index", sprLaserCrystalIdle, sprLaserCrystalHurt, sprLaserCrystalFire))
+		{
+		script_bind_draw(draw_landslide, depth, self, sprite_index, image_index)
+		x = xstart
+		y = ystart
+		speed = 0
+		image_alpha = 0
+		mask_index = mskSnowBot
+		spr_shadow = mskNone
+		}
+	}
+
+#define draw_landslide(inst, spr, img, ima)
+	{
+	with(inst)
+		{
+		draw_sprite_part_ext(spr, img, 0, 0, 48, 23, x+(sprite_xoffset-sprite_width), y+sprite_yoffset-sprite_height+9*image_yscale, image_xscale, image_yscale, image_blend, 1)
+	//	draw_sprite_ext(mask_index, 0, x, y, image_xscale, image_yscale, 0, 0, 0.2)
 		}
 	instance_destroy()
 	}
