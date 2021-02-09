@@ -27,7 +27,7 @@
 	global.CustomArea = true
 	global.RideEnable = 0
 	global.ruleStayPortal = false
-	global.ruleStayBlood = true
+	global.ruleStayBlood = false
 	global.ruleCorpseBlood = true
 	global.ruleSkirmish = true
 
