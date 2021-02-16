@@ -50,6 +50,8 @@ snd_idpd= sndRavenScreech
 snd_cptn= sndRavenScreech
 nts_color_blood = [c_aqua, c_white]
 
+nts_can_punch = false
+
 maxspeed -= 0.5
 
 envoyflying = false
@@ -61,6 +63,17 @@ flycd = 0
 	{
 	if(button_pressed(index,"horn"))
 		{sound_play_hit(sndRavenScreech, 0.3)}
+	
+	if(button_pressed(index,"fire"))
+		{
+		if(wep==0 && reload<=0)
+			{
+			sound_play_hit(sndRavenScreech, 0.3)
+			motion_add(gunangle, maxspeed)
+			with(instance_create(x, y, PopupText))
+				{mytext = "@rNO FISTS"}
+			}
+		}
 	
 	if(mod_exists("mod", "NT3D"))
 		{step_3d()}
