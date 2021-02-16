@@ -1,15 +1,19 @@
-[0.3.2 - a4_020421]
-
 v0.3.3 in coming —— 
 
 
 v0.3.2
+
+Now you can hold pick button to drop your weapon or push the weapons on the ground. 
 
 Add ShinningFingernail. 
 
 Add Guard back. 
 	- Remade whole charater. 
 
+
+Changed the damage of punch. 
+	- Increase by your level. 
+	- Double damage if you have ImpactWrists. 
 
 Changed the trigger time of the mutations which be triggered when taking damage. 
 	- BlastChest
@@ -32,7 +36,12 @@ Changed GeometricalElbow again.
 Changed ParalyticNerve. 
 
 Changed a few. 
+	- The weapon kick will never be reset when you swap your weapon to your fists. 
+	- Disable some effects on default. 
+		- Which might cause game lags. 
 	- Some areas' point place on the map. 
+	- Some weapons' tier. 
+		- BanditGun from 0 to -1. 
 	- RadiumWings never color WepPickup anymore. 
 	- A few for compatible with NT3D. 
 		- Skirmish
