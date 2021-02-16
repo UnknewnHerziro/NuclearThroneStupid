@@ -206,7 +206,7 @@ list=
 	["wep/long bow.wep.gml",	1],
 	["wep/ultra bow.wep.gml",	1],
 	
-//	["wep/raven laser cannon.wep.gml",	1],
+	["wep/raven laser cannon.wep.gml",	1],
 	
 	["wep/golden pipe.wep.gml",				1],
 	["wep/golden crowbar.wep.gml",			1],

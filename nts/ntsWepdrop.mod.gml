@@ -39,13 +39,13 @@ with(instances_matching_le(LilHunter, "my_health", 0)){scrDrop(1, 0, choose("hun
 
 with(ScrapBoss){if(my_health <= 0){with(instance_create(x, y, WepPickup))
 	{
-	wep = "thief key"
-/*	with(instance_create(0, 0, ProtoChest))
+//	wep = "thief key"
+	with(instance_create(0, 0, ProtoChest))
 		{
 		other.wep = (wep == "thief key") ? "raven laser cannon" : "thief key"
 		instance_delete(self)
 		}
-*/	}}}
+	}}}
 
 
 
