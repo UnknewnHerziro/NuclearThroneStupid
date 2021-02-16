@@ -7,7 +7,7 @@
 #define weapon_auto		return true
 #define weapon_load		return 5
 #define weapon_cost		return 1
-#define weapon_area		return 0
+#define weapon_area		return -1
 #define weapon_swap		return sndSwapMachinegun
 
 #define weapon_gold			return false
