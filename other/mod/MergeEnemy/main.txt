@@ -1,1 +1,2 @@
-/loadmod MergeEnemy
+/loadmod MergeEnemy_lib
+/loadskin test
