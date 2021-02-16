@@ -25,7 +25,7 @@
 	global.DoTips = false
 	global.WepTips = false
 	global.CustomArea = true
-	global.RideEnable = 0
+	global.RideEnable = -1
 	global.ruleStayPortal = false
 	global.ruleStayBlood = false
 	global.ruleCorpseBlood = true
@@ -33,8 +33,8 @@
 
 //Blood
 	globalvar BloodMax, BloodSpeed
-	BloodMax = 127
-	BloodSpeed = 0.002
+	BloodMax = 0
+	BloodSpeed = 0
 
 //Viewwep
 	globalvar ViewwepData
@@ -73,13 +73,13 @@ ds_map_destroy(CrownsayData)
 			trace("/lowquality : Low quality to decrease lags. ")
 			trace("/fps60 : 60 fps mode or not. Make sure you are playing as NTT beta(9942+), otherwise there will be tons of bugs. ")
 			trace("/wide : Wide Screen display mode or not. ")
-			trace(`/bloodmax : Size of max number of dynamic bloodstains. Set it to 0 if game slowly. (0~3, default=3) `)
+			trace(`/bloodmax : Size of max number of dynamic bloodstains. Set it to 0 if game slowly. (0~3, default=0) `)
 		//	trace("/bloodcorpse : Enable corpses leave blood or not when stay bloodstains. ")
 			trace("/bloodstay : Enable stay bloodstains or not. ")
 			trace("/customarea : Enable custom area or not. ")
 			trace("/skirmish : Enable skirmish or not. ")
 			trace("/stayportal : Enable stay portal or not in coop game. ")
-			trace("/ridemax : Max loops for enable ride system. Set it to -1 if game slowly. (default=0)")
+			trace("/ridemax : Max loops for enable ride system. Set it to -1 if game slowly. (default=-1)")
 			trace("/tips : Do tips or not. ")
 			trace("/wepview : Only weapons examining for tips or not. ")
 			trace("")
@@ -316,6 +316,7 @@ ds_map_destroy(CrownsayData)
 		{
 		scrPlayerRestats()
 		scrWepangle()
+		scrWepDrop()
 		scrPunch()
 		scrNoneSwap()
 	//	scrPlayerDostats()
@@ -533,7 +534,8 @@ ds_map_destroy(CrownsayData)
 		}}
 	}
 
-#define scrSpecialWepChange
+#define scrSpecialWepChange		script_bind_end_step(scrSpecialWepChange_1, 0)
+#define scrSpecialWepChange_1
 	{
 	with(WepPickup)
 		{
@@ -576,6 +578,7 @@ ds_map_destroy(CrownsayData)
 			default: break
 			}
 		}
+	instance_destroy()
 	}
 
 #define scrSkirmish
@@ -598,40 +601,62 @@ ds_map_destroy(CrownsayData)
 	else{if(abs(bwepangle)!=120){bwepangle=120}}}
 	}
 
+#define scrWepDrop
+	{
+	if(variable_instance_get(self, "nts_can_drop", true))
+		{
+		if(button_check(index, "pick"))
+			{
+			nts_wep_droping = variable_instance_get(self, "nts_wep_droping", 0) + current_time_scale
+			if(nts_wep_droping >= 30)
+				{
+				with(instance_create(x, y, WepPickup))
+					{
+					speed		= 10
+					direction	= other.gunangle
+					rotation	= random(360)
+					
+					creator	= other
+					wep		= other.wep
+					}
+				
+				wep = wep_none
+				}
+			}
+		else{nts_wep_droping = 0}
+		}
+	}
+
 #define scrPunch
 	{
-	if(BeDriver==noone && race!="defect")
+	if(variable_instance_get(self, "nts_can_punch", true))
 		{
 		if(button_pressed(index,"fire"))
 			{
 			if(wep==0 && reload<=0)
 				{
-				if(race == "envoy")
+				reload = 10
+				
+				with(instance_create(x, y, Shank))
 					{
-					sound_play_hit(sndRavenScreech, 0)
-					picksay("@rno hands")
+					direction = other.gunangle
+					image_angle = direction
+					speed = 1
+					team = other.team
+					creator = other
+					hitid = [other.spr_idle, other.alias]
+					damage = ceil(sqrt(power(GameCont.level, 3))) * (skill_get(mut_impact_wrists) ? 2 : 1) + 1
 					}
-				else{
-					reload = 10
-					with(instance_create(x,y,Shank))
-						{
-						direction = other.gunangle
-						image_angle = direction
-						speed = 1
-						team = other.team
-						creator = other
-						hitid = [other.spr_idle, other.alias]
-						damage = 2
-						}
-					sound_play_hit(sndImpWristHit, 0)
-					}
+				
+				sound_play_hit(sndImpWristHit, 0)
 				motion_add(gunangle, maxspeed)
 				}
 			}
+		
 		if(race=="steroids" && button_pressed(index,"spec") && bwep==0 && breload<=0)
 			{
 			breload = 10
-			with(instance_create(x,y,Shank))
+			with(instance_create(x, y, Shank))
 				{
 				direction = other.gunangle
 				image_angle = direction
@@ -639,7 +664,7 @@ ds_map_destroy(CrownsayData)
 				team = other.team
 				creator = other
 				hitid = [other.spr_idle, other.alias]
-				damage = 2
+				damage = ceil(sqrt(power(GameCont.level, 3))) * (skill_get(mut_impact_wrists) ? 2 : 1) + 1
 				}
 			sound_play_hit(sndImpWristHit, 0)
 			}
@@ -653,11 +678,14 @@ ds_map_destroy(CrownsayData)
 		if(fork())
 			{
 			wait current_time_scale
-			bwep = wep
-			breload = reload
-			bcurse = curse
-			wep = 0
-			curse = 0
+			bwep	= wep
+			breload	= reload
+			bcurse	= curse
+			bwkick	= wkick
+			
+			wep		= wep_none
+			curse	= 0
+			wkick	= 0
 			exit}else{exit}
 		}}
 
@@ -709,13 +737,6 @@ ds_map_destroy(CrownsayData)
 		
 		with(Anchor){if(place_meeting(x, y, other)){say(other.alias+" found A big anchor. #It's so heavy that nobody can move it. ");gone(0,sndHammer,-1);}}
 		
-		//Sewer & PizzaSewer
-	/*	with(instances_matching_ne(Shell, "nts_unlock_coward", true)){if(sprite_index==sprCigarette){if(distance_to_object(other)<=CheckDistance)
-			{
-			rplc("cigarette");picksay("cigarette!"); say(`${other.alias} picked a cigarette up. `)
-			gone(0,sndSalamanderEndFire,0)
-			}}}
-	*/	
 		with(ToxicBarrel){if(place_meeting(x, y, other)){say(other.alias+" can't move the toxic barrel, #because it's going to be spilt. ");}}
 		
 		with(PizzaEntrance){if(place_meeting(x, y, other)){
