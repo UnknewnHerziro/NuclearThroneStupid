@@ -290,9 +290,10 @@ list=
 //	["mtt/br.skill.gml",		1],
 	["mtt/ee.skill.gml",		1],
 	["mtt/mb.skill.gml",		1],
-	["mtt/comminuted_phalanx/comminuted_phalanx.skill.gml",			1],
-	["mtt/purged_dhatuyo/purged_dhatuyo.skill.gml",					1],
-	["mtt/shinning_fingernail/shinning_fingernail.skill.gml",		1],
+	["mtt/comminuted_phalanx/comminuted_phalanx.skill.gml",		1],
+	["mtt/purged_dhatuyo/purged_dhatuyo.skill.gml",				1],
+	["mtt/shinning_fingernail/shinning_fingernail.skill.gml",	1],
+	["mtt/cardiorhythm/cardiorhythm.skill.gml",					1],
 	
 	
 	

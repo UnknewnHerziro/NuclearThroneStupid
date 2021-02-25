@@ -139,7 +139,7 @@ ds_map_destroy(CrownsayData)
 					trace(`Dynamic bloodstains disable. `)
 					}
 				}
-			else{trace(`/bloodmax : Size of max number of dynamic bloodstains. (0~3, default=3)`)}
+			else{trace(`/bloodmax : Size of max number of dynamic bloodstains. (0~3, default=0)`)}
 			return true
 			}
 		
@@ -207,7 +207,7 @@ ds_map_destroy(CrownsayData)
 				else{trace(`Ride enable before L${a} be finished. `)}
 				global.RideEnable = a
 				}
-			else{trace(`/ridemax : Max loops for enable ride system. Set it to -1 if game slowly. (default=0)`)}
+			else{trace(`/ridemax : Max loops for enable ride system. Set it to -1 if game slowly. (default=-1)`)}
 			return true
 			}
 		
@@ -603,13 +603,16 @@ ds_map_destroy(CrownsayData)
 
 #define scrWepDrop
 	{
-	if(variable_instance_get(self, "nts_can_drop", true))
+	if(variable_instance_get(self, "nts_can_drop", true) && curse<=0)
 		{
 		if(button_check(index, "pick"))
 			{
 			nts_wep_droping = variable_instance_get(self, "nts_wep_droping", 0) + current_time_scale
 			if(nts_wep_droping >= 30)
 				{
+			//	if(wep != wep_none)
+			//		{say(`${alias} dropped #${weapon_get_name(wep)}. `)}
+				
 				with(instance_create(x, y, WepPickup))
 					{
 					speed		= 10
@@ -621,10 +624,14 @@ ds_map_destroy(CrownsayData)
 					}
 				
 				wep = wep_none
+				
+				return true
 				}
+			return false
 			}
-		else{nts_wep_droping = 0}
 		}
+	nts_wep_droping = 0
+	return false
 	}
 
 #define scrPunch
@@ -1620,9 +1627,6 @@ picksay(`+${argument0} money`)
 		"shovel knight" : "Shield, the weapon of weak people. ", 
 		"d" : "A shield made with yellow crystals that making creepy laughs. #When the energy swimming in it, #the crystals will appear and fire lasers. ", 
 		}
-	
-	a[?"raven laser cannon"] = 
-		"You do not understand. "
 	
 	a[?"hand grenade"] = 
 		"A hand cluster grenade. "
