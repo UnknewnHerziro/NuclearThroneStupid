@@ -27,6 +27,13 @@ Changed the trigger time of the mutations which be triggered when taking damage.
 	- ParalyticNerve
 		- Now they happens in the same frame. 
 
+Changed the AI of Gun God in Dungeon. 
+	- Gun God only active when a Player has already seen it. 
+	- The map will be lit when Gun God be active. 
+	- Gun God will try to chase nearest Player if no Player could see it. 
+	- Pistol fires will not be as fast as before, instead, the bullets' speed will be slower. 
+	- Pistol fire rate will be higher. 
+
 Changed the unlocking condition of Coward. 
 Changed the colors of Phantom and SniperWand. 
 	- Ace told Wspr that we used lime green as the border color of CursedLithiasis made it seems gross. 
@@ -758,7 +765,7 @@ Main Developers
 			- Crown of Destimy
 	
 	沐凉人
-	MuLiangRen
+	MuLiangRen (A.L.L.)
 		- Concept Designer
 			- vGundam RX-93 (stand-alone)
 			- Double Ultra (in coming)
@@ -769,27 +776,28 @@ Main Developers
 	Reaper
 		- Early Propagandist
 		- Designer
-			- StitchingMonster
+			- StitchingMonster (in coming)
 		- Artist
 			- Hand(Flare)Grenade
 			- Gamma Weapons
 			- StrikeGun
 			- Sprites of Molefish 3D parts (removed)
-			- StitchingMonster
+			- StitchingMonster (in coming)
 	
 	Tease
 		- Forever Divinity of Inspiration, the REAL Critic
 			- Cacubus, Centipede, Denji the ChainsawMan, Togata (in coming)
 			- BlueRose and RedQueen, from Devil May Cry
 	
-	Wspr
+	Wspr (S.S.J.S.)
 		- Best Cover Image Designer among the Developers
 		- Propagandist and Technology Adviser
 		- Programmer and Artist
 			- AwkwardMan
 			- some of the weapons. 
 			- Crown of Master (modify)
-		- personal page on Itch: https://wspr.itch.io/
+		- Frontline Tester
+		- Personal page on Itch: https://wspr.itch.io/
 	
 	彦杉
 	YanShan
@@ -802,15 +810,13 @@ Main Developers
 			- Portraits, Icons, Buttons and SkinB of Digger
 			- Buttons and Icons of Envoy
 			- Portaits of Pumpking and Envoy. (unused)
+			- Portait of Mishap (in coming)
 			- Fruit
 			- Bud (in coming)
 	
 	
 	
 Thanks to
-	
-	————
-		- Made sprite of RavenLaserCannon. 
 	
 	Ace
 		- Texts fixing. 
@@ -837,6 +843,7 @@ Thanks to
 			- Button of RadiationJaw, and AwkwardMan Ultras
 	
 	Jsburg
+		- Technology Adviser
 		- Made some sprites of CharSelect buttons. 
 			- Coward
 			- AwkwardMan
@@ -844,6 +851,9 @@ Thanks to
 	
 	Nucone
 		- Tester
+	
+	Taberone
+		- Secrets Digger, inspired the team to create more. 
 	
 	緹歐
 	Tiew
@@ -853,9 +863,12 @@ Thanks to
 			- SHOT, in Ruins
 	
 	Wildebee
-		- made altcharselect.mod and permit for using it in NTS. 
+		- Made altcharselect.mod and permit for using it in NTS. 
 			- https://wildebee.itch.io/altcharselect
-		- personal page on Itch: https://wildebee.itch.io/
+		- Personal page on Itch: https://wildebee.itch.io/
+	
+	————
+		- Made sprite of RavenLaserCannon. 
 	
 	You
 		- Watching this document. 
