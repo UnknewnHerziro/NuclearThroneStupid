@@ -729,6 +729,10 @@ ds_map_destroy(CrownsayData)
 			gone(0, snd_hurt, 0)
 			}}
 		
+		with(Debris){if(distance_to_object(other)<=PickDistance){
+			rplc("rock");picksay("debris!"); say(`${other.alias} picked debris up. `)
+			gone(0,sndHammer,0)}}
+		
 		with(Barrel){if(distance_to_object(other)<=PickDistance){
 			rplc("barrel");picksay("barrel!"); say(`${other.alias} picked a barrel up. `)
 			gone(0,sndSwapFlame,0)}}

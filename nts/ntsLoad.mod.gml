@@ -122,6 +122,7 @@ list=
 	["wep/bandit.wep.gml",	1],
 	["wep/barrel.wep.gml",	1],
 	["wep/cactus.wep.gml",	1],
+	["wep/rock.wep.gml",	1],
 	
 	["wep/turtle.wep.gml",	1],
 	
