@@ -4,11 +4,17 @@ v0.3.3 in coming ——
 v0.3.2
 
 Now you can hold pick button to drop your weapon or push the weapons on the ground. 
+Now you can pick debris and throw them to enemies. 
 
 Add ShinningFingernail. 
+	- Try to get both ShinningFingernail and ComminutedPhalanx with a melee weapon or playing as Crystal! 
+Add Cardiorhythm. 
 
 Add Guard back. 
 	- Remade whole charater. 
+
+Add RavenLaserCannon back. 
+
 
 
 Changed the damage of punch. 
@@ -28,6 +34,7 @@ Changed the colors of Phantom and SniperWand.
 			- So we changed all colors of sprites about Phantom to Crystals or Curses colors. 
 
 Changed ComminutedPhalanx. 
+	- Now deflected enemy projectiles will be doubled normally. 
 Changed CursedLithiasis. 
 	- Give a new mutation choice to replace CursedLithiasis after getting LastWish. 
 	- Replace it with a special mutation after 4-?. 
@@ -703,11 +710,12 @@ Main Developers
 			- Binah from Lobotomy Corporation (in coming)
 			- Weapons from Cave Stroy (in coming)
 			- Laser/Ion Attack of TechnoMancer (in coming)
-		- Data Collector, found lots of interesting Ways of Playing
+		- Frontline Tester and Data Collector, found lots of interesting Ways of Playing
 			- StrikeGun clone Turtles
-				- Used to be a bug. 
+				- Used to be a bug but it was really interesting so we kept it by another way. 
 			- Possible Neoplasia Mutantions Build
 			- Possible BicepsReflex Mutantions Build of Skeleton (removed)
+				- Might be added back soon. 
 	
 	氢锆【格里高利卡车】
 	HaZar the GregorTruck
@@ -740,6 +748,7 @@ Main Developers
 	
 	寒枫
 	Maple
+		- Frontline Tester
 		- Designer
 			- Bronya section (stand-alone)
 			- Crown of Destimy
@@ -751,14 +760,14 @@ Main Developers
 	沐凉人
 	MuLiangRen
 		- Concept Designer
-			- vGundam RX-93
+			- vGundam RX-93 (stand-alone)
 			- Double Ultra (in coming)
 		- Present HaZar a keyboard and a mouse as gifts. 
 			- That helped a lot for typing. Finally I could get rid off my old membrane keyboard and middlebuttonless mouse. 
 	
 	瑞破
 	Reaper
-		- Propagandist
+		- Early Propagandist
 		- Designer
 			- StitchingMonster
 		- Artist
@@ -769,12 +778,12 @@ Main Developers
 			- StitchingMonster
 	
 	Tease
-		- Forever Divinity of Inspiration
+		- Forever Divinity of Inspiration, the REAL Critic
 			- Cacubus, Centipede, Denji the ChainsawMan, Togata (in coming)
 			- BlueRose and RedQueen, from Devil May Cry
 	
 	Wspr
-		- the Best Cover Image Designer among the Developers
+		- Best Cover Image Designer among the Developers
 		- Propagandist and Technology Adviser
 		- Programmer and Artist
 			- AwkwardMan
