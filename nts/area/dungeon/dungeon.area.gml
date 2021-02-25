@@ -140,8 +140,8 @@ with(instance_create(x+16, y+16, CustomProp))
 		type = 0
 		}
 	image_speed_raw=0.4; snd_hurt = sndHitMetal; my_health=12; solid=1; team=0; depth=-2; start=0; ntstype="Door"; hitid=55;
-	on_step = script_ref_create(DoorClose)
-	on_death = script_ref_create(DoorDestroy)
+	on_step = DoorClose
+	on_death = DoorDestroy
 	}
 
 #define DoorClose
@@ -196,13 +196,70 @@ with(instances_matching(CustomProp,"ntstype","Door"))
 	else{if(!(place_meeting(x,y+1,Wall)||place_meeting(x,y-1,Wall))||point_distance(x,y,10016,10016)<96){instance_delete(self)}}
 	}
 with(Floor){if !irandom(31) && point_distance(x,y,10000,10000)>128 && !place_meeting(x,y,Wall) instance_create(x+16, y+16, WeaponChest)}
-if(GameCont.loops){with(instance_furthest(10000, 10000, Floor)){with(instance_create(x, y, CustomEnemy))
+if(GameCont.loops){with(instance_furthest(10000, 10000, Floor)){with(instance_create(x+16, y+16, CustomEnemy))
 	{
 	mod_script_call("area", "helipad", "God_create")
-	snd_dead = sndMutant6Dead
-	on_death = god_death
-	spr_dead = mod_variable_get("area", "helipad", "sprGod").sprite.spr_execute
+	
+	snd_dead	= sndMutant6Dead
+	spr_dead	= mod_variable_get("area", "helipad", "sprGod").sprite.spr_execute
+	on_step		= god_pre
+	on_hit		= god_hit
+	on_death	= god_death
+	model_index	= "spr_idle"
+	
+	with(instance_create(x, y, PortalClear))
+		{}
 	}}}
+
+#define god_pre
+	{
+	for(var i=0; i<maxp; i++)
+		{if(point_seen(x, y, i)){god_active()}}
+	}
+
+#define god_hit		god_active()
+
+#define god_active
+	{
+//	mod_script_call("area", "helipad", "ref_God_step")
+	on_step = god_step
+	sound_play(sndVenuz)
+	TopCont.darkness = false
+	god_confetti(team, 16)
+	with(EnemyHorror)
+		{
+		god_confetti(other.team, 8)
+		my_health = 0
+		}
+	with(instances_matching(CustomProp,"ntstype","Door"))
+		{
+		god_confetti(other.team, 4)
+		my_health = 0
+		}
+	}
+
+#define god_confetti
+	{
+	repeat(argument1){with(instance_create(x, y, ConfettiBall))
+		{
+		direction	= random(360)
+		speed		= 8
+		damage		= 0
+		team		= argument0
+		}}
+	}
+
+#define god_step
+	{
+	mod_script_call("area", "helipad", "God_step")
+	if(instance_exists(Player))
+		{
+		for(var i=0; i<maxp; i++)
+			{if(point_seen(x, y, i)){exit}}
+		with(instance_nearest(x, y, Player))
+			{other.direction = point_direction(other.x, other.y, x, y)}
+		}
+	}
 
 #define god_death
 	{
