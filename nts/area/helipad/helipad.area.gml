@@ -835,6 +835,7 @@ instance_create(x, y, Floor)
 	scrCall_e("scrCommonSpr")
 	}
 
+#define ref_God_step	on_step = God_step
 #define God_step
 	{
 	scrCall_e("scrCommonSpr")
@@ -933,8 +934,15 @@ instance_create(x, y, Floor)
 	}
 #define God_fire_0
 	{
-	common_fire(EnemyBullet1, gunangle, 0, GameCont.loops?16:12, 0)
-	if(ammo > 0){alarm1 = random_range(2, 6)}
+	if(GameCont.loops)
+		{
+		common_fire(EnemyBullet1, gunangle, 0, 12, 0)
+		if(ammo > 0){alarm1 = random_range(2, 6)}
+		}
+	else{
+		common_fire(EnemyBullet1, gunangle, 0, 8, 0)
+		if(ammo > 0){alarm1 = random_range(1, 3)}
+		}
 	}
 
 #define God_pref_1
