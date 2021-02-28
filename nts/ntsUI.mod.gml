@@ -67,7 +67,7 @@ if(argument0 == "wide")
 		scrDrLQWepAmmo()
 		}
 	scrDrRace()
-	scrDrMarketNPC()
+//	scrDrMarketNPC()
 	}
 
 #define scrDrLQWepAmmo
@@ -83,11 +83,11 @@ if(TopCont.fade < 0)
 #define scrDrRace
 	{
 	scrDrRaceCoward()
-	scrDrRaceClown()
+//	scrDrRaceClown()
 	scrDrRaceTricker()
 	scrDrRacePhantom()
 //	scrDrRaceBronya()
-	scrDrRaceDefect()
+//	scrDrRaceDefect()
 	var ary = mod_variable_get("mod", "ntsCont", "binah_se")
 	if(ary != undefined){scrDrBinah(ary)}
 	}
@@ -104,22 +104,24 @@ if(TopCont.fade < 0)
 
 #define scrDrRaceClown
 	{
-	with(instances_matching(Player,"race","clown"))
+	if("nts_clown_command" in GameCont)
 		{
-		draw_set_visible_all(false)
-		draw_set_visible(index,1)
-		var PCHUDText="mode:"
-		switch(GameCont.CMcommand[index])
+		with(instances_matching(Player, "race", "clown"))
 			{
-			case 1: PCHUDText+="clear" ;break;
-			case 2: PCHUDText+="goto" ;break;
-			case 3: PCHUDText+="stand" ;break;
-			case 4: PCHUDText+="attack" ;break;
-			default: PCHUDText+="?"; break;
+			draw_set_visible_all(false)
+			draw_set_visible(index, true)
+			var PCHUDText = "mode: "
+			switch(GameCont.nts_clown_command[@index])
+				{
+				case 1: PCHUDText+="clear" ;break;
+				case 2: PCHUDText+="goto" ;break;
+				case 3: PCHUDText+="stand" ;break;
+				case 4: PCHUDText+="attack" ;break;
+				default: PCHUDText+="?"; break;
+				}
+			draw_text_nt(111-mpm, 7, PCHUDText)
 			}
-		draw_text_nt(111-mpm, 7, PCHUDText)
 		}
-
 	}
 
 #define scrDrRaceTricker
@@ -338,6 +340,7 @@ if(instance_exists(LevCont) && instance_exists(SkillIcon))
 #define scrDrawP2
 	{
 	draw_set_font(2)
+//	scrDrRaceClown()
 	scrDrGameContSay()
 	}
 
