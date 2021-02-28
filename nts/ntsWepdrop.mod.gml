@@ -49,9 +49,11 @@ with(ScrapBoss){if(my_health <= 0){with(instance_create(x, y, WepPickup))
 
 
 
-#define scrDrop(c, lp, w, amin, amax)
-if(random(lp?ls:1)<c){with(instance_create(x, y, WepPickup))
+#define scrDrop(c, lp, w, amin, amax)	if(variable_instance_get(self, "nts_wepdrop", true))
 	{
-	wep = w
-	ammo = random_range(amin, amax)
-	}}
+	if(random(lp?ls:1)<c){with(instance_create(x, y, WepPickup))
+		{
+		wep = w
+		ammo = random_range(amin, amax)
+		}}
+	}
